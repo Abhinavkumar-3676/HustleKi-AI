@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f7fc">
+  <title>HustleKit AI | Your Business Assistant</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <a href="#" class="brand">✦ HustleKit <span>AI</span></a>
+    <p class="side-label">WORKSPACE</p>
+    <button class="nav active" data-page="dashboard">⌂ Dashboard</button>
+    <button class="nav" data-page="product">✧ Product Writer</button>
+    <button class="nav" data-page="social">◎ Social Media</button>
+    <button class="nav" data-page="message">✉ Client Messages</button>
+    <button class="nav" data-page="invoice">▤ Invoice Maker</button>
+    <button class="nav" data-page="saved">▣ Saved Documents</button>
+
+    <div class="sidebar-bottom">
+      <div class="avatar">HK</div>
+      <div><strong>My Workspace</strong><small>Free Plan</small></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">YOUR BUSINESS, SIMPLIFIED</p>
+        <h1 id="pageTitle">Dashboard</h1>
+      </div>
+      <div class="model-pill">
+        <span class="dot"></span>
+        <span id="modelStatus">AI not loaded</span>
+      </div>
+    </header>
+
+    <section id="dashboard" class="page">
+      <div class="hero">
+        <div>
+          <span class="tag">✦ YOUR AI WORKSPACE</span>
+          <h2>Less busywork.<br><span>More business.</span></h2>
+          <p>Create content, communicate with clients and manage business documents from one place.</p>
+          <button class="primary" data-goto="product">Start creating ↗</button>
+        </div>
+        <div class="hero-art">✳</div>
+      </div>
+
+      <div class="stats">
+        <article class="stat-card">
+          <span>✧</span><p>Documents saved</p>
+          <h2 id="savedCount">0</h2>
+        </article>
+        <article class="stat-card">
+          <span>◉</span><p>AI engine</p>
+          <h2 id="aiStat">Offline</h2>
+        </article>
+        <article class="stat-card">
+          <span>↗</span><p>Business tools</p>
+          <h2>04</h2>
+        </article>
+      </div>
+
+      <div class="section-heading">
+        <div><h2>Quick actions</h2><p>What would you like to create today?</p></div>
+      </div>
+
+      <div class="tool-grid">
+        <button class="tool-card" data-goto="product">
+          <span class="tool-icon purple">✧</span>
+          <h3>Product descriptions</h3>
+          <p>Turn product details into sales-ready copy.</p>
+          <span class="arrow">↗</span>
+        </button>
+        <button class="tool-card" data-goto="social">
+          <span class="tool-icon pink">◎</span>
+          <h3>Social media content</h3>
+          <p>Draft captions, promotions and hashtags.</p>
+          <span class="arrow">↗</span>
+        </button>
+        <button class="tool-card" data-goto="message">
+          <span class="tool-icon blue">✉</span>
+          <h3>Client messages</h3>
+          <p>Write professional client communications.</p>
+          <span class="arrow">↗</span>
+        </button>
+        <button class="tool-card" data-goto="invoice">
+          <span class="tool-icon green">▤</span>
+          <h3>Invoice & quotation</h3>
+          <p>Calculate totals and print business documents.</p>
+          <span class="arrow">↗</span>
+        </button>
+      </div>
+    </section>
+
+    <section id="product" class="page hidden">
+      <div class="section-heading"><div>
+        <h2>Product Description Writer</h2>
+        <p>Create content for your products in seconds.</p>
+      </div></div>
+      <div class="workspace">
+        <form id="productForm" class="panel">
+          <label>Product name<input name="name" required placeholder="e.g. Wireless Headphones"></label>
+          <label>Category<input name="category" placeholder="e.g. Electronics"></label>
+          <label>Price (₹)<input name="price" type="number" min="0" placeholder="1499"></label>
+          <label>Key features<textarea name="features" required placeholder="Battery life, design, quality..."></textarea></label>
+          <label>Target audience<input name="audience" placeholder="e.g. College students"></label>
+          <label>Tone<select name="tone"><option>Professional</option><option>Friendly</option><option>Persuasive</option><option>Creative</option></select></label>
+          <button class="primary" type="submit">✧ Generate description</button>
+        </form>
+        <div class="panel output-panel">
+          <div class="output-top"><h3>Your result</h3><span class="tag">AI GENERATED</span></div>
+          <div id="productOutput" class="output">Your generated description will appear here.</div>
+          <div class="output-actions">
+            <button class="secondary" data-copy="productOutput">Copy text</button>
+            <button class="secondary" data-save="productOutput">Save document</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="social" class="page hidden">
+      <div class="section-heading"><div>
+        <h2>Social Media Studio</h2>
+        <p>Create promotional content for your business.</p>
+      </div></div>
+      <div class="workspace">
+        <form id="socialForm" class="panel">
+          <label>Business name<input name="business" required placeholder="Your brand name"></label>
+          <label>Product or service<input name="service" required placeholder="What are you promoting?"></label>
+          <label>Platform<select name="platform"><option>Instagram</option><option>Facebook</option><option>LinkedIn</option><option>WhatsApp</option></select></label>
+          <label>Goal<select name="goal"><option>Get more customers</option><option>Increase awareness</option><option>Announce an offer</option><option>Launch a product</option></select></label>
+          <label>Tone<select name="tone"><option>Engaging</option><option>Professional</option><option>Funny</option><option>Persuasive</option></select></label>
+          <button class="primary" type="submit">✧ Generate content</button>
+        </form>
+        <div class="panel output-panel">
+          <div class="output-top"><h3>Your content</h3><span class="tag">AI GENERATED</span></div>
+          <div id="socialOutput" class="output">Your caption and hashtags will appear here.</div>
+          <div class="output-actions">
+            <button class="secondary" data-copy="socialOutput">Copy text</button>
+            <button class="secondary" data-save="socialOutput">Save document</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="message" class="page hidden">
+      <div class="section-heading"><div>
+        <h2>Client Message Writer</h2>
+        <p>Professional communication without the struggle.</p>
+      </div></div>
+      <div class="workspace">
+        <form id="messageForm" class="panel">
+          <label>Recipient<input name="recipient" required placeholder="Client's name"></label>
+          <label>Message type<select name="type"><option>Client outreach</option><option>Project proposal</option><option>Follow-up</option><option>Payment reminder</option><option>Thank-you message</option></select></label>
+          <label>Project or service<input name="service" required placeholder="Website development, design..."></label>
+          <label>Important details<textarea name="details" placeholder="Price, deadline, offer or context"></textarea></label>
+          <label>Tone<select name="tone"><option>Professional</option><option>Friendly</option><option>Polite</option><option>Persuasive</option></select></label>
+          <button class="primary" type="submit">✧ Write message</button>
+        </form>
+        <div class="panel output-panel">
+          <div class="output-top"><h3>Your message</h3></div>
+          <div id="messageOutput" class="output">Your message draft will appear here.</div>
+          <div class="output-actions">
+            <button class="secondary" data-copy="messageOutput">Copy text</button>
+            <button class="secondary" data-save="messageOutput">Save document</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="invoice" class="page hidden">
+      <div class="section-heading"><div>
+        <h2>Invoice & Quotation Maker</h2>
+        <p>Create a printable business document. No AI required.</p>
+      </div></div>
+      <form id="invoiceForm" class="panel invoice-form">
+        <label>Business name<input name="business" required placeholder="Your business"></label>
+        <label>Client name<input name="client" required placeholder="Client name"></label>
+        <label>Document type<select name="type"><option>INVOICE</option><option>QUOTATION</option></select></label>
+        <label>Document number<input name="number" required value="HK-001"></label>
+        <label>Service description<input name="service" required placeholder="Website development"></label>
+        <label>Quantity<input name="quantity" type="number" min="1" value="1" required></label>
+        <label>Rate (₹)<input name="rate" type="number" min="0" step="0.01" value="1000" required></label>
+        <label>Discount (₹)<input name="discount" type="number" min="0" step="0.01" value="0"></label>
+        <label>Tax (%)<input name="tax" type="number" min="0" max="100" step="0.01" value="0"></label>
+        <button class="primary" type="submit">Create document</button>
+      </form>
+      <div id="invoiceOutput" class="panel invoice-preview hidden"></div>
+    </section>
+
+    <section id="saved" class="page hidden">
+      <div class="section-heading"><div>
+        <h2>Saved Documents</h2>
+        <p>Your locally saved drafts and business documents.</p>
+      </div><button id="clearSaved" class="secondary">Clear all</button></div>
+      <div id="savedList" class="saved-list"></div>
+    </section>
+
+    <footer>
+      <p>HustleKit AI · Built with HTML, CSS, JavaScript & open-weight AI.</p>
+      <p>Privacy: AI prompts are processed in your browser when local inference is active. Model downloads may require internet.</p>
+    </footer>
+  </main>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
